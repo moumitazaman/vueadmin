@@ -1,4 +1,11 @@
 <script setup>
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+
+// initialize components based on data attribute selectors
+onMounted(() => {
+    initFlowbite();
+})
 import store from '../stores/authStore';
   const state = store();
 </script>

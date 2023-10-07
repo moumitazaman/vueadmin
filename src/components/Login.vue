@@ -6,14 +6,15 @@ import authStore from '../stores/authStore';
 const auth = authStore();
 
 
-const email = ref();
-const password = ref();
+const email = ref("admin@test.com");
+const password = ref("123456");
 
 </script>
 
 <template>    
     <div class="bg-indigo-200 h-screen w-screen flex items-center">
         <div class="h-max mx-auto flex flex-col items-center">
+            <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Admin Panel</span> </h1>
             <div class="bg-white shadow-xl p-10 flex flex-col gap-4 text-sm">
                   <div>
                     <label class="text-indigo-600 font-bold inline-block pb-2" for="email">Email</label>

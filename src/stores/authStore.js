@@ -7,11 +7,17 @@ import {defineStore} from 'pinia';
 const authStore = defineStore('auth', () => {
     const isAuthenticated = ref(localStorage.getItem('isAuthenticated'));
     const user = ref({
-        email:'moumitasub@gmail.com',
-        password:'12345',
+        email:'admin@test.com',
+        password:'123456',
     });
 
     const login = (email, password) => {
+        if(email == "admin@test.com" && password == "123456"){
+            localStorage.setItem('isAuthenticated',true);
+            isAuthenticated.value = true;
+           // todoStore().action.fetch();
+            router.push('/dashboard');
+        }
         if(JSON.parse(localStorage.getItem('user')) != null)
             user.value = JSON.parse(localStorage.getItem('user'));
 
